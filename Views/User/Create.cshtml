@@ -1,0 +1,126 @@
+
+<style>
+    input[type=range] {
+  height: 5px;
+  -webkit-appearance: none;
+  margin: 0px 0;
+  width: 10%;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #FFFFFF;
+  @* border-radius: 14px;
+  border: 0px solid #000000; *@
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #FFFFFFF;
+  border: 0px solid #FFFFFF;
+  height: 20px;
+  width: 20px;
+  border-radius: 19px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #50555C;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #50555C;
+  border-radius: 14px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #FFFFFFF;
+  border: 0px solid #FFFFFF;
+  height: 20px;
+  width: 20px;
+  border-radius: 19px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #50555C;
+  border: 0px solid #000000;
+  border-radius: 28px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #50555C;
+  border: 0px solid #000000;
+  border-radius: 28px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #FFFFFFF;
+  border: 0px solid #FFFFFF;
+  height: 20px;
+  width: 20px;
+  border-radius: 19px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #50555C;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #50555C;
+</style>
+
+<div class="container border-0">
+    <!-- Example row of columns -->
+    <div class="row mx-auto d-flex justify-content-center">
+      @{
+        ViewData["size"] = 5;
+        ViewData["link"] = ViewBag.ProductId;
+    }
+      @Html.Partial("_ContentPartial", 8)
+    </div>
+    
+  <div class="row">
+        <div class="col-md-8 mx-auto text-center text-light">
+                <div class="card-body bg-black border-black">
+                  <p class="card-text">LOOK</p>
+                  
+              </div>
+
+        </div>
+    </div>
+</div>
+
+<form>
+  <!-- Rating -->
+  <div class="form-group">
+    <label for="rating" class="text-light"><small>RATE THIS LOOK  &nbsp;  &nbsp;</small></label>
+    <input type="range" class="form-control-range text-light" id="rating" name="rating" min="1" max="5" step="1" required>
+    <output for="rating" class="text-light" id="ratingOutput">1</output>
+  </div>
+<br>
+  
+
+  <div class="form-group">
+    <textarea class="form-control bg-black text-light " style="color: white;" id="reviewText" name="reviewText" rows="5" placeholder="PROVIDE A REVIEW"></textarea>
+  </div>
+<br>
+  <button type="submit" class="btn btn-black text-light border border-light">SUBMIT</button>
+</form>

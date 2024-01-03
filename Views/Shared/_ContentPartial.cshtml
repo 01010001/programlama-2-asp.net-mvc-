@@ -1,0 +1,11 @@
+
+@using Microsoft.AspNetCore.Mvc
+
+<div class="col-md-@ViewData["size"] text-center border-0">
+    <div class="card mb-4 shadow-sm border-0">
+        <a href="@Url.Action("Create", "User",  new { link = @ViewData["link"] })">
+            <img class="card-img-top card-mb-4 border-0" src="@ViewData["link"]"
+                 alt="Card image cap">
+        </a>
+    </div>
+</div>
